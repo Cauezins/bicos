@@ -72,9 +72,8 @@ body{background:whitesmoke; margin: 0;}
         outline: none;
     }
 
-    #contrast button{
+    #contrast img{
         border: none;
-        background-color: white;
         position: relative;
         right: 10vw;
         cursor: pointer;
