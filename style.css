@@ -75,7 +75,7 @@ body{background:whitesmoke; margin: 0;}
     #contrast img{
         border: none;
         position: relative;
-        right: 10vw;
+        right: 8vw;
         cursor: pointer;
     }
  
@@ -150,7 +150,7 @@ body{background:whitesmoke; margin: 0;}
    #footerLink a{
     text-decoration: none;
     margin-left: 10px;
-    font-size: 3vh;
+    font-size: 2.6vh;
     color: #524f4f;
    }
 
