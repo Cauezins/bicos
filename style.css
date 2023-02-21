@@ -12,11 +12,22 @@ body{background:whitesmoke; margin: 0;}
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 0.2vh;
+    padding-top: 0.2vh; 
     }
-    .initialHeaderChild:hover{
-        color: #2a2f86;
+    #initialHeaderChild:hover{
+        color: #2a2f86; 
     }
+    #initialHeaderChild:active{
+    text-decoration: none;
+    }
+    
+    #initialHeaderChild {
+        margin: 0 auto;
+        font-family: Arista;
+        color: #424794;
+        font-size: 7vh;
+        text-decoration: none;
+        }
 
     #img{
         width: 18px;
@@ -27,13 +38,6 @@ body{background:whitesmoke; margin: 0;}
         
     }
 
-    .initialHeaderChild {
-    margin: 0 auto;
-    font-family: Arista;
-    color: #424794;
-    font-size: 7vh;
-    text-decoration: none;
-    }
     
     .initialHeaderCousin {
         margin: 0 auto;
@@ -100,6 +104,20 @@ body{background:whitesmoke; margin: 0;}
 
    .optionsWork:hover{
     color: rgba(0, 0, 0, 0.596);
+   }
+   #descriptionSite{
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell; 
+    height: 19vh; width: 20vw;
+    top: 50%; left: 50%;
+    transform: translate(50%,150%);
+    border-radius: 30px; background: #ffff;
+   }
+   #descriptionSiteChild{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px; color:#524f4f; 
+    margin: 0; 
    }
 
 
