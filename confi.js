@@ -6,3 +6,8 @@ function searchColorNorm() {
     document.getElementById('searchButton').style.backgroundColor = 'white'
     document.getElementById('search').style.backgroundColor = 'white'
 }
+function year() {
+    const dataAtual = new Date();
+    let anoAtual = dataAtual. getFullYear();
+    document.getElementById('dateCopy').innerHTML = anoAtual
+}
