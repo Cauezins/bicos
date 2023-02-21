@@ -30,8 +30,8 @@ body{background:whitesmoke; margin: 0;}
         }
 
     #img{
-        width: 18px;
-        height: 18px;
+        width: 2vw;
+        height: 3vh;
         position: relative;
         left: 5px;
         fill: #424794;
@@ -64,7 +64,7 @@ body{background:whitesmoke; margin: 0;}
     }
     #searchButton{
         border: none;
-        text-align: center; font-size: 17px;
+        text-align: center; font-size: 2.8vh;
         width: 85%; height: 80%;
     }
 
@@ -79,7 +79,7 @@ body{background:whitesmoke; margin: 0;}
     /* QUEBRA LINHA - HR (E AS OPÇÕES DE TRABALHO DA TELA INICIAL) */
     #breakLine{
     border-color: whitesmoke; border-style: solid;
-    width:100vw; top: 60px; 
+    width:100vw; top: 9.3vh; 
     position: absolute;
     }
      
@@ -87,7 +87,7 @@ body{background:whitesmoke; margin: 0;}
     background-color: #ffffff;      box-shadow: 0 5px 5px  #cecece;
     display: flex; justify-content: space-between;
     align-items: center;
-    height: 6vh;
+    height: 7vh;
     width: 100%;
     padding-bottom: 4px;
     
@@ -97,7 +97,7 @@ body{background:whitesmoke; margin: 0;}
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     margin: 0 auto;
-    font-size: 15px;
+    font-size: 2.6vh;
     color: rgba(0, 0, 0, 0.747);
     text-decoration: none;
    }
@@ -105,11 +105,17 @@ body{background:whitesmoke; margin: 0;}
    .optionsWork:hover{
     color: rgba(0, 0, 0, 0.596);
    }
+   
+   .main{
+    height: 70vh;
+   }
+   
    #descriptionSite{
     text-align: center;
     vertical-align: middle;
     display: table-cell; 
     height: 19vh; width: 20vw;
+    
     top: 50%; left: 50%;
     transform: translate(50%,150%);
     border-radius: 30px; background: #ffff;
@@ -118,6 +124,37 @@ body{background:whitesmoke; margin: 0;}
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px; color:#524f4f; 
     margin: 0; 
+   }
+
+   footer{
+    height: 23vh;
+    width: 100%;
+    background-color: #e7e8ed;
+    border: 1px solid rgba(0, 0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+   }
+
+   #footerLink{
+    text-decoration: none;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+   }
+   #footerLink a{
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 3vh;
+    color: #524f4f;
+   }
+
+   #footerIcon{
+    text-decoration: none;
+    font-family: Arista;
+    font-size: 6vh;
+   }
+   #footerCopy{
+    margin-top: 1.7vh;
+    font-size: 2vh;
    }
 
 
