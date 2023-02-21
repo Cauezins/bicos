@@ -71,6 +71,14 @@ body{background:whitesmoke; margin: 0;}
     #searchButton:focus{
         outline: none;
     }
+
+    #contrast button{
+        border: none;
+        background-color: white;
+        position: relative;
+        right: 10vw;
+        cursor: pointer;
+    }
  
    
 
@@ -155,6 +163,9 @@ body{background:whitesmoke; margin: 0;}
    #footerCopy{
     margin-top: 1.7vh;
     font-size: 2vh;
+   }
+   #dateCopy{
+    color: #524f4f;
    }
 
 

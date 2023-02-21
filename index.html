@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="confi.js"></script>
 </head>
-<body>
+<body onload="year()">
     <!-- CABEÇALHO -->
     <div id="initialHeader">
         <a id="initialHeaderChild" href="#" class=notranslate>bicos</a>
         <div id="search">
             <input type="text" placeholder="O que você precisa?" onfocus="searchColor()" onblur="searchColorNorm()" id="searchButton">
-            <a href=""><img id="img" src="https://svgsilh.com/svg_v2/3331255.svg" alt=""></a>
+            <a href=""><img id="img" src="search.svg" alt=""></a>
         </div>    
             
         <input type="button" value="Logue-se"class="initialHeaderCousin"> 
+        
+        <div id="contrast">
+            <button><img src="moon.svg" alt=""></button>
+        </div>
+        
         <hr id="breakLine"> <br>
     </div>
     <div id="secondHeader">    
@@ -47,7 +52,7 @@
             <a href="">Instagram</a>
         </div>
         <a href="" id="footerIcon">bicos</a>
-        <div id="footerCopy">© 2023</div>
+        <div id="footerCopy">© <strong id="dateCopy"></strong></div>
     </footer>
 
     <!-- Fim do final do site -->
