@@ -1,3 +1,48 @@
+function darkModeOp() {
+    let theme = document.getElementsByTagName('link')[0];
+    if (theme.getAttribute('href') == 'dark.css') {
+        localStorage.removeItem('dark')
+        light()
+    } else{
+        localStorage.setItem('dark', 1)
+        contrast()
+    }
+    
+}
+
+
+function contrast() {
+    const darkMode = localStorage.getItem('dark')
+    
+    if(darkMode){
+        dark()
+    } 
+}
+
+function dark() {
+    let theme = document.getElementsByTagName('link')[0];
+    localStorage.setItem('dark', 1)
+    theme.setAttribute('href', 'dark.css')
+    document.getElementById('light').id = 'dark'
+    document.getElementById('imgD').setAttribute('src', 'sun.svg')
+    document.getElementById('img').setAttribute('src', 'searchlight.svg')
+    document.getElementById('searchButton').style.backgroundColor = '#373737'
+    document.getElementById('search').style.backgroundColor = '#373737'
+
+}
+
+function light() {
+    let theme = document.getElementsByTagName('link')[0];
+    localStorage.removeItem('dark')
+    theme.setAttribute('href', 'style.css')
+    document.getElementById('dark').id = 'light'
+    document.getElementById('imgD').setAttribute('src', 'moon.svg')
+    document.getElementById('img').setAttribute('src', 'search.svg')
+    document.getElementById('searchButton').style.backgroundColor = 'white'
+    document.getElementById('search').style.backgroundColor = 'white'
+
+}
+
 function slider() {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
@@ -44,22 +89,4 @@ function year() {
     const dataAtual = new Date();
     let anoAtual = dataAtual. getFullYear();
     document.getElementById('dateCopy').innerHTML = anoAtual
-}
-function dark() {
-    var theme = document.getElementsByTagName('link')[0];
-    if (theme.getAttribute('href') == 'style.css') {
-        theme.setAttribute('href', 'dark.css')
-        document.getElementById('light').id = 'dark'
-        document.getElementById('imgD').setAttribute('src', 'sun.svg')
-        document.getElementById('img').setAttribute('src', 'searchlight.svg')
-        document.getElementById('searchButton').style.backgroundColor = '#373737'
-        document.getElementById('search').style.backgroundColor = '#373737'
-    } else {
-        theme.setAttribute('href', 'style.css')
-        document.getElementById('dark').id = 'light'
-        document.getElementById('imgD').setAttribute('src', 'moon.svg')
-        document.getElementById('img').setAttribute('src', 'search.svg')
-        document.getElementById('searchButton').style.backgroundColor = 'white'
-        document.getElementById('search').style.backgroundColor = 'white'
-    }
 }
