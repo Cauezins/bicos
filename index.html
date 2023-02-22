@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bicos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
     <script src="confi.js"></script>
+
+
 </head>
-<body onload="year()">
+<body onload="year(); slider();">
     <!-- CABEÇALHO -->
     <div id="initialHeader">
         <a id="initialHeaderChild" href="#" class=notranslate>bicos</a>
         <div id="search">
             <input type="text" placeholder="O que você precisa?" onfocus="searchColor()" onblur="searchColorNorm()" id="searchButton">
-            <a href=""><img id="img" src="search.svg" alt=""></a>
+            <a href="" ><img id="img" src="search.svg" alt=""></a>
         </div>    
             
         <input type="button" value="Logue-se"class="initialHeaderCousin"> 
         
-        <div id="contrast">
-            <img src="moon.svg" alt="">
+        <div id="light" onclick="dark()">
+            <img id="imgD" src="moon.svg" alt="">
         </div>
         
         <hr id="breakLine"> <br>
@@ -34,14 +37,52 @@
     </div>
     <!-- FINAL DO CABEÇALHO -->
 
-    <!-- DESCRIÇÃO DO SITE - DIREITA INFERIOR -->
-    <div class="main">
-        <div id="descriptionSite">
-            <h1 id="descriptionSiteChild"> Profissionais autônomos e qualificados em sua <br> cidade.</h1>
+    <!-- MAIN DO SITE-->
+    <main>
+        <div class="description">
+            
+            <!-- DESCRIÇÃO DO SITE - DIREITA INFERIOR -->
+
+            <div id="descriptionSite">
+                <h1 id="descriptionSiteChild"> Profissionais autônomos e qualificados em sua <br> cidade.</h1>
+            </div>
+
+            <!-- FINAL DA DESCRIÇÃO -->
+
         </div>
-    </div>
+        
+        <!-- MELHORES AVALIADOS-->
+
+        <div id="avaliationSite">
+            
+            <h1 id="avaliationText">Melhores avaliados em "Cidade"</h1>
+
+            <div class="avaliationContainer swiper mySwiper" id="">
+
+                <div class="swiper-wrapper">   
+                    <div class="swiper-slide">
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                    </div>
+                    <div class="swiper-slide">
+
+                    </div>
+
+                    <div class="swiper-slide">
+
+                    </div>
+                </div> 
+                <div class="swiper-pagination"></div>
+
+            </div> 
+        </div>
+    </main>   
+        
        
-    <!-- FINAL DA DESCRIÇÃO -->
+    <!-- FINAL DO MAIN-->
 
     <!-- Final do site -->
     
@@ -56,6 +97,6 @@
     </footer>
 
     <!-- Fim do final do site -->
-
+    <script src="swiper-bundle.min.js"></script>
 </body>
 </html>

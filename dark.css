@@ -1,4 +1,4 @@
-body{background:whitesmoke; margin: 0;padding: 0;}
+body{background:#5b5a5a; margin: 0;}
 
 @font-face {
     font-family: Arista;
@@ -8,7 +8,7 @@ body{background:whitesmoke; margin: 0;padding: 0;}
 /* DIV DO CABEÇALHO - POSTERIOR A LINHA HR ( H1, BARRA DE PESQUISA E BOTÃO) */
     #initialHeader{
     width: 100vw; height: 11vh;
-    background: #ffffff;
+    background: #373737;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +24,7 @@ body{background:whitesmoke; margin: 0;padding: 0;}
     #initialHeaderChild {
         margin: 0 auto;
         font-family: Arista;
-        color: #424794;
+        color: #626ae8;
         font-size: 7vh;
         text-decoration: none;
         }
@@ -33,9 +33,7 @@ body{background:whitesmoke; margin: 0;padding: 0;}
         width: 2vw;
         height: 3vh;
         position: relative;
-        left: 5px;
-        fill: #424794;
-        
+        left: 5px; 
     }
 
     
@@ -43,19 +41,20 @@ body{background:whitesmoke; margin: 0;padding: 0;}
         margin: 0 auto;
         font-size: 2.3vh;
         font-family: Arial, Helvetica, sans-serif;
-        background-color: white;
-        border: 1px solid; border-radius: 50px;
-        color: rgb(48, 48, 155);
+        background-color: #373737;
+        font-weight: bold;
+        border: 1px solid #626ae8; border-radius: 50px;
+        color: #626ae8;
         width: 90px; height: 5vh;  
     }
     .initialHeaderCousin:hover{
-        background-color: rgba(234, 234, 236, 0.719);
+        background-color: #535353;
     }
 
     #search{
         width: 30vw;
         height: 5.5vh;
-        border: 1px solid #424794;
+        border: 1px solid #626ae8;
         border-radius: 30px;
         display: flex;
         align-items: center;
@@ -64,6 +63,8 @@ body{background:whitesmoke; margin: 0;padding: 0;}
     }
     #searchButton{
         border: none;
+        color: #ebebeb;
+        background-color: #373737;
         text-align: center; font-size: 2.8vh;
         width: 85%; height: 80%;
     }
@@ -72,7 +73,7 @@ body{background:whitesmoke; margin: 0;padding: 0;}
         outline: none;
     }
 
-    #light img{
+    #dark img{
         border: none;
         position: relative;
         right: 8vw;
@@ -85,13 +86,13 @@ body{background:whitesmoke; margin: 0;padding: 0;}
 
     /* QUEBRA LINHA - HR (E AS OPÇÕES DE TRABALHO DA TELA INICIAL) */
     #breakLine{
-    border-color: whitesmoke; border-style: solid;
+    border-color: #545454; border-style: solid;
     width:100vw; top: 9.3vh; 
     position: absolute;
     }
      
     #secondHeader{
-    background-color: #ffffff;      box-shadow: 0 5px 5px  #cecece;
+    background-color: #373737;      box-shadow: 0 10px 10px  #000000;
     display: flex; justify-content: space-between;
     align-items: center;
     height: 7vh;
@@ -105,16 +106,18 @@ body{background:whitesmoke; margin: 0;padding: 0;}
     font-weight: 500;
     margin: 0 auto;
     font-size: 2.6vh;
-    color: rgba(0, 0, 0, 0.747);
+    color: #cccccc;
     text-decoration: none;
+    font-weight: bold;
    }
 
    .optionsWork:hover{
-    color: rgba(0, 0, 0, 0.596);
+    color: rgb(87, 87, 87);
    }
    
    .description{
     height: 70vh;
+    background-color: #5b5a5a;
    }
    
    #descriptionSite{
@@ -125,22 +128,23 @@ body{background:whitesmoke; margin: 0;padding: 0;}
     
     top: 50%; left: 50%;
     transform: translate(50%,150%);
-    border-radius: 30px; background: #ffff;
+    border-radius: 30px; background: #373737;
    }
    #descriptionSiteChild{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px; color:#524f4f; 
+    font-size: 20px; color:#ffffff; 
     margin: 0; 
    }
 
    #avaliationSite{
     height: 320px;
     
-    background-color: white;
+    background-color: #373737;
    }
 
    #avaliationText{
     font-size: 4vh;
+    color: #e7e8ed;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
     padding-left: 7vw;
@@ -161,15 +165,13 @@ body{background:whitesmoke; margin: 0;padding: 0;}
 
    .swiper-slide{
     border-radius: 30px;
-    background-color: #ebebeb;
+    background-color: #5b5a5a;
    }
-
- 
 
    footer{
     height: 23vh;
     width: 100%;
-    background-color: #e7e8ed;
+    background-color: #222222;
     border: 1px solid rgba(0, 0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -184,20 +186,25 @@ body{background:whitesmoke; margin: 0;padding: 0;}
     text-decoration: none;
     margin-left: 10px;
     font-size: 2.6vh;
-    color: #524f4f;
+    color: #efefef;
    }
 
    #footerIcon{
     text-decoration: none;
     font-family: Arista;
     font-size: 6vh;
+    color: #414dff;
+   }
+   #footerIcon:visited{
+    color: #414dff;
    }
    #footerCopy{
     margin-top: 1.7vh;
     font-size: 2vh;
+    color: #efefef;
    }
    #dateCopy{
-    color: #524f4f;
+    color: #efefef;
    }
 
 
