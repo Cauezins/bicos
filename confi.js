@@ -163,10 +163,8 @@ function signUpFunction() {
   
 
       }
-    //   FIM DA FUNÇÃO LOGIN
-    
-   
-        function eraseForm () {
+
+      function eraseForm () {
         var intervalo = 1500 / 10;
         var timer = setInterval(function() {
         document.getElementById('signUpForm').style.opacity = opacidade -= 0.1;
@@ -183,3 +181,5 @@ function signUpFunction() {
         
        }
         
+    //   FIM DA FUNÇÃO LOGIN
+    
