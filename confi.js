@@ -91,95 +91,54 @@ function year() {
     document.getElementById('dateCopy').innerHTML = anoAtual
 }
 
+
+
 // FUNÇÃO LOGIN
-var opacidade = 1
-function signUpFunction() {
-
-   var form = document.createElement('FORM')
-   form.setAttribute('id', 'signUpForm');
-    var name = document.createElement('INPUT')
-    name.setAttribute('class', 'signUpInput')
-    name.setAttribute('type', 'text')
-    name.setAttribute('placeholder', 'Nome ');
-
-    var lastName = document.createElement('INPUT')
-    lastName.setAttribute('class', 'signUpInput')
-    lastName.setAttribute('type', 'text')
-    lastName.setAttribute('placeholder', 'Sobrenome ');
-
-    var cpf = document.createElement('INPUT')
-    cpf.setAttribute('class', 'signUpInput')
-    cpf.setAttribute('type', 'text')
-    cpf.setAttribute('placeholder', 'CPF ');
-
-    var cnpj = document.createElement('INPUT')
-    cnpj.setAttribute('class', 'signUpInput')
-    cnpj.setAttribute('type', 'text')
-    cnpj.setAttribute('placeholder', 'CNPJ ');
-
-    var email = document.createElement('INPUT')
-    email.setAttribute('class', 'signUpInput')
-    email.setAttribute('type', 'text')
-    email.setAttribute('placeholder', 'Email ');
-
-    var birthday = document.createElement('INPUT')
-    birthday.setAttribute('class', 'signUpInput')
-    birthday.setAttribute('type', 'text')
-    birthday.setAttribute('placeholder', 'Data de Nascimento ');
-
-    var password = document.createElement('INPUT')
-    password.setAttribute('class', 'signUpInput')
-    password.setAttribute('type', 'text')
-    password.setAttribute('placeholder', 'Senha ');
+   function createForm() {
     
-    var button = document.createElement('INPUT')
-    button.setAttribute('class', 'signUpInput')
-    button.setAttribute('id', 'signUpButton')
-    button.setAttribute('type', 'button')
-    button.setAttribute('value', 'Cadastrar ');
+    // CRIANDO UM FORMULÁRIO
+    var form = document.createElement('FORM')
+    form.setAttribute('id', 'signUpForm');
+
+    // QUANDO O FORMULÁRIO FOR CRIADO, O BOTÃO PERDE O ONCLICK: NÃO PODERÁ CRIAR OUTRO FORMULÁRIO ENQUANTO HOUVER UM ATIVO
+    document.getElementById('anuncioButton').removeAttribute('onclick')
+
+
+// APPENDCHILD ADICIONA OS INPUTS AO FORMULÁRIO
+document.getElementById('anuncioCad').appendChild(form).innerHTML = 
+`
+<h1 id="h1" onclick="removeForm()" style="font-size: 20px; position: relative; left: 120px;"> X </h1>
+<input class="signUpInput" type="text" placeholder="Nome ">
+<input class="signUpInput" type="text" placeholder="Sobrenome ">
+<input class="signUpInput" type="text" placeholder="CPF ">
+<input class="signUpInput" type="text" placeholder="CNPJ ">
+<input class="signUpInput" type="text" placeholder="Email ">
+<input class="signUpInput" type="text" placeholder="Data de Nascimento ">
+<input class="signUpInput" type="text" placeholder="Senha ">
+<input class="signUpInput" id="signUpButton" type="button" value="Cadastrar ">
+`
+//  FIM DA CRIAÇÃO
+  }
     
-    var h1 = document.createElement('H1')
-    h1.setAttribute('id', 'h1')
-    h1.setAttribute("onclick","eraseForm()");
-    h1.innerHTML = 'X'; h1.style.fontSize = '20px'; 
-    h1.style.position = 'relative';
-    h1.style.left = '120px';
-
-
-
-    document.getElementById('anuncioCad').appendChild(form).appendChild(h1)
-    document.getElementById('signUpForm').appendChild(name)
-    document.getElementById('signUpForm').appendChild(lastName)
-    document.getElementById('signUpForm').appendChild(cpf)
-    document.getElementById('signUpForm').appendChild(cnpj)
-    document.getElementById('signUpForm').appendChild(email)
-    document.getElementById('signUpForm').appendChild(birthday)
-    document.getElementById('signUpForm').appendChild(password)
-    document.getElementById('signUpForm').appendChild(button)
-    
-   
-    if(opacidade == 1)     document.getElementById('anuncioButton').onclick = null;
-       
-  
-
-      }
-
-      function eraseForm () {
+        function removeForm() {
+        // DIMINUI A OPACIDADE DO FORMULÁRIO UTILIZANDO O SETINTERVAL
+        
+        var opacidade = 1
         var intervalo = 1500 / 10;
-        var timer = setInterval(function() {
+        var timer = setInterval(()=> {
         document.getElementById('signUpForm').style.opacity = opacidade -= 0.1;
         if(opacidade <= 0) {
-        clearInterval(timer);
-        document.getElementById('signUpForm').style.display = 'none';
-        document.getElementById('signUpForm').remove()
-        document.getElementById('anuncioButton').onclick = signUpFunction
+
+            // QUANDO A OPACIDADE VIRAR 0 E O FORMULÁRIO FICAR TRANSPARENTE, O FORMULÁRIO SERÁ REMOVIDO E O INTERVALO ACABA
+            document.getElementById('signUpForm').remove()
+            clearInterval(timer);
+    
         opacidade = 1
         }
         }, intervalo); 
-      
-       
-        
-       }
-        
+        // QUANDO O FORMULÁRIO ATUAL FOR CANCELADO, O ONCLICK SERÁ RECOLOCADO NO BOTÃO PARA QUE POSSA CHAMAR OUTRO
+        document.getElementById('anuncioButton').setAttribute('onclick', 'createForm()')
+        }
+
+  
     //   FIM DA FUNÇÃO LOGIN
-    
