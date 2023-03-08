@@ -1,48 +1,67 @@
+// DECLARAÇÃO DE VARIÁVEIS - CHAMANDO TAGS DO SITE;
+
+// <link rel="stylesheet" id="styleSite"> (linha 8) 
+const theme = document.getElementById('styleSite');
+
+
+// 
+
+
+///// DARKMODE E LIGHTMODE
+
+// SE <link rel="stylesheet" id="styleSite"> (linha 8) HREF FOR 'DARK.CSS', REMOVERÁ O MODO DARK DO ARMAZENAMENTO E FARÁ O MODO LIGHT
+// SENÃO "ELSE", IRÁ INSERIR O MODO DARK NO ARMAZENAMENTO DO SITE E FARÁ O MODO DARK.
 function darkModeOp() {
-    let theme = document.getElementsByTagName('link')[0];
-    if (theme.getAttribute('href') == 'dark.css') {
-        localStorage.removeItem('dark')
-        light()
-    } else{
-        localStorage.setItem('dark', 1)
-        contrast()
-    }
-    
+    if (theme.getAttribute('href') == 'dark.css') localStorage.removeItem('dark'), light();
+    else localStorage.setItem('dark', 1), contrast();   
 }
 
 
-function contrast() {
-    const darkMode = localStorage.getItem('dark')
-    
-    if(darkMode){
-        dark()
-    } 
+// VER SE O MODO DARK ESTÁ NO ARMAZENAMENTO DO SITE E (&&) INSERIR A FUNÇÃO DARK (MODO DARK) 
+function contrast() {  
+// Short-circuit evaluation - Método substituto para IF ELSE. Se o Modo Dark estiver no armazenamento, o operador lógico "&&" dirá que a função "dark()" também é verdadeira.
+ localStorage.getItem('dark') && dark(); 
 }
 
+
+// FUNÇÃO MODO DARK
 function dark() {
-    let theme = document.getElementsByTagName('link')[0];
+
+    //ADICIONA O MODO DARK AO ARMAZENAMENTO
     localStorage.setItem('dark', 1)
+
+    // INSERE O ATRIBUTO href='dark.css' EM <link rel="stylesheet" id="styleSite" > (linha 8) 
     theme.setAttribute('href', 'dark.css')
+
+    // TROCA O NOME ID DO ELEMENTO DE LIGHT PARA DARK
     document.getElementById('light').id = 'dark'
+
+    // TROCANDO A LUA PELO SOL
     document.getElementById('imgD').setAttribute('src', 'sun.svg')
     document.getElementById('img').setAttribute('src', 'searchlight.svg')
-    document.getElementById('searchButton').style.backgroundColor = '#373737'
-    document.getElementById('search').style.backgroundColor = '#373737'
+
 
 }
 
+// FUNÇÃO MODO LIGHT
 function light() {
-    let theme = document.getElementsByTagName('link')[0];
+    //REMOVE MODO DARK DO ARMAZENAMENTO DO SITE    
     localStorage.removeItem('dark')
+
+    // INSERE O ATRIBUTO href='style.css' EM <link rel="stylesheet" id="styleSite" > (linha 8)     
     theme.setAttribute('href', 'style.css')
+
+    // TROCA O NOME ID DO ELEMENTO DE DARK PARA LIGHT
     document.getElementById('dark').id = 'light'
+
+    // TROCANDO O SOL PELA LUA
     document.getElementById('imgD').setAttribute('src', 'moon.svg')
     document.getElementById('img').setAttribute('src', 'search.svg')
-    document.getElementById('searchButton').style.backgroundColor = 'white'
-    document.getElementById('search').style.backgroundColor = 'white'
+   
 
 }
 
+// JAVASCRIPT PARA O CSS swiper-bundle.min
 function slider() {
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
@@ -65,80 +84,28 @@ function slider() {
         }
       });
 }
+// 
 
-function searchColor() {
-    if(document.getElementsByTagName('link')[0].getAttribute('href') == 'style.css'){
-        document.getElementById('searchButton').style.backgroundColor = '#f5f5f5'
-        document.getElementById('search').style.backgroundColor = '#f5f5f5'
-    } else{
-        document.getElementById('searchButton').style.backgroundColor = '#535353'
-        document.getElementById('search').style.backgroundColor = '#535353'
-    }
-}
-function searchColorNorm() {
-    if(document.getElementsByTagName('link')[0].getAttribute('href') == 'style.css'){
-        document.getElementById('searchButton').style.backgroundColor = 'white'
-        document.getElementById('search').style.backgroundColor = 'white'
-    } else{
-        document.getElementById('searchButton').style.backgroundColor = '#373737'
-        document.getElementById('search').style.backgroundColor = '#373737'
-    }
-    
-}
+// MOSTRAR O ANO ATUAL NO FINAL DO SITE
 function year() {
     const dataAtual = new Date();
-    let anoAtual = dataAtual. getFullYear();
+    let anoAtual = dataAtual.getFullYear();
     document.getElementById('dateCopy').innerHTML = anoAtual
 }
 
 
+// LOGIN DO SITE
+function loginandSignUp() {
+document.body.innerHTML += `
+<form id='loginandSignUpForm'>
+<label for="nome">Nome</label>
+<input type="text" class='inputForm' name='nome'>
+<label for="email">Email</label>
+<input type="email" class='inputForm' name='email'>
+<label for="senha">Senha</label>
+<input type="text" class='inputForm' name='senha'>
+</form> 
 
-// FUNÇÃO LOGIN
-   function createForm() {
-    
-    // CRIANDO UM FORMULÁRIO
-    var form = document.createElement('FORM')
-    form.setAttribute('id', 'signUpForm');
-
-    // QUANDO O FORMULÁRIO FOR CRIADO, O BOTÃO PERDE O ONCLICK: NÃO PODERÁ CRIAR OUTRO FORMULÁRIO ENQUANTO HOUVER UM ATIVO
-    document.getElementById('anuncioButton').removeAttribute('onclick')
-
-
-// APPENDCHILD ADICIONA OS INPUTS AO FORMULÁRIO
-document.getElementById('anuncioCad').appendChild(form).innerHTML = 
 `
-<h1 id="h1" onclick="removeForm()" style="font-size: 20px; position: relative; left: 120px;"> X </h1>
-<input class="signUpInput" type="text" placeholder="Nome ">
-<input class="signUpInput" type="text" placeholder="Sobrenome ">
-<input class="signUpInput" type="text" placeholder="CPF ">
-<input class="signUpInput" type="text" placeholder="CNPJ ">
-<input class="signUpInput" type="text" placeholder="Email ">
-<input class="signUpInput" type="text" placeholder="Data de Nascimento ">
-<input class="signUpInput" type="text" placeholder="Senha ">
-<input class="signUpInput" id="signUpButton" type="button" value="Cadastrar ">
-`
-//  FIM DA CRIAÇÃO
-  }
-    
-        function removeForm() {
-        // DIMINUI A OPACIDADE DO FORMULÁRIO UTILIZANDO O SETINTERVAL
-        
-        var opacidade = 1
-        var intervalo = 1500 / 10;
-        var timer = setInterval(()=> {
-        document.getElementById('signUpForm').style.opacity = opacidade -= 0.1;
-        if(opacidade <= 0) {
 
-            // QUANDO A OPACIDADE VIRAR 0 E O FORMULÁRIO FICAR TRANSPARENTE, O FORMULÁRIO SERÁ REMOVIDO E O INTERVALO ACABA
-            document.getElementById('signUpForm').remove()
-            clearInterval(timer);
-    
-        opacidade = 1
-        }
-        }, intervalo); 
-        // QUANDO O FORMULÁRIO ATUAL FOR CANCELADO, O ONCLICK SERÁ RECOLOCADO NO BOTÃO PARA QUE POSSA CHAMAR OUTRO
-        document.getElementById('anuncioButton').setAttribute('onclick', 'createForm()')
-        }
-
-  
-    //   FIM DA FUNÇÃO LOGIN
+}
