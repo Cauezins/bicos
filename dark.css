@@ -1,210 +1,436 @@
-body{background:#5b5a5a; margin: 0;}
+/*O MODO DARK ESTÁ INCOMPLETO*/
 
-@font-face {
-    font-family: Arista;
-    src: url(Arista-Pro-Light-trial.ttf);
+html,body{height: 100%; }
+body {
+  /* APAGANDO SCROW HORIZONTAL */
+  overflow-x: hidden; 
+  /*/*/
+  background:#5b5a5a;
+  margin: 0;
+  padding: 0;
 }
 
-/* DIV DO CABEÇALHO - POSTERIOR A LINHA HR ( H1, BARRA DE PESQUISA E BOTÃO) */
-    #initialHeader{
-    width: 100vw; height: 11vh;
-    background: #373737;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 0.2vh; 
-    }
-    #initialHeaderChild:hover{
-        color: #2a2f86; 
-    }
-    #initialHeaderChild:active{
-    text-decoration: none;
-    }
-    
-    #initialHeaderChild {
-        margin: 0 auto;
-        font-family: Arista;
-        color: #626ae8;
-        font-size: 7vh;
-        text-decoration: none;
-        }
+ /*//// VERSÃO PARA COMPUTADOR ////*/
+@font-face {
+  font-family: Arista;
+  src: url(Arista-Pro-Light-trial.ttf);
+}
 
-    #img{
-        width: 2vw;
-        height: 3vh;
-        position: relative;
-        left: 5px; 
-    }
+/* DIV DO CABEÇALHO */
+#initialHeader {
+  width: 100vw;
+  height: 11vh;
+  background: #373737;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.2vh;
+}
 
-    
-    .initialHeaderCousin {
-        margin: 0 auto;
-        font-size: 2.3vh;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #373737;
-        font-weight: bold;
-        border: 1px solid #626ae8; border-radius: 50px;
-        color: #626ae8;
-        width: 90px; height: 5vh;  
-    }
-    .initialHeaderCousin:hover{
-        background-color: #535353;
-    }
+#initialHeaderChild:hover {
+  color: #2a2f86; 
+}
 
-    #search{
-        width: 30vw;
-        height: 5.5vh;
-        border: 1px solid #626ae8;
-        border-radius: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+#initialHeaderChild:active {
+  text-decoration: none;
+}
 
-    }
-    #searchButton{
-        border: none;
-        color: #ebebeb;
-        background-color: #373737;
-        text-align: center; font-size: 2.8vh;
-        width: 85%; height: 80%;
-    }
+#initialHeaderChild {
+  margin: 0 auto;
+  font-family: Arista;
+  color: #626ae8;
+  font-size: 7vh;
+  text-decoration: none;
+}
 
-    #searchButton:focus{
-        outline: none;
-    }
+#img {
+  width: 2vw;
+  height: 3vh;
+  position: relative;
+  left: 5px;
 
-    #dark img{
-        border: none;
-        position: relative;
-        right: 8vw;
-        cursor: pointer;
-    }
+}
+
+.initialHeaderCousin {
  
-   
+  margin: 0 auto;
+  font-size: 2.3vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #373737;
+  border-radius: 50px;
+  border: 1px solid #626ae8; 
+  color: #626ae8;
+  width: 90px;
+  height: 5vh;
+  
+}
+
+.initialHeaderCousin:hover {
+  background-color: #535353;
+  border: 1px solid;
+}
+
+#search {
+  width: 30vw;
+  height: 5.5vh;
+  border: 1px solid #626ae8;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#searchButton {
+  border: none;
+  text-align: center;
+  font-size: 2.8vh;
+  width: 85%;
+  height: 80%;
+}
+
+#searchButton, #search {
+  background: #373737; 
+}
+   /* SE O INPUT DE PESQUISA FOR CLICADO, ELE E SEU ELEMENTO PAI TROCARÃO DE BACKGROUND-COLOR: */
+#search:focus-within, #searchButton:focus{
+  background: #535353;
+}
 
 
+#searchButton:focus {
+  outline: none;
+}
 
-    /* QUEBRA LINHA - HR (E AS OPÇÕES DE TRABALHO DA TELA INICIAL) */
-    #breakLine{
-    border-color: #545454; border-style: solid;
-    width:100vw; top: 9.3vh; 
-    position: absolute;
-    }
-     
-    #secondHeader{
-    background-color: #373737;      box-shadow: 0 10px 10px  #000000;
-    display: flex; justify-content: space-between;
-    align-items: center;
-    height: 7vh;
-    width: 100%;
-    padding-bottom: 4px;
-    
-   }
-   .optionsWork{
-    background: none; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    margin: 0 auto;
-    font-size: 2.6vh;
-    color: #cccccc;
-    text-decoration: none;
-    font-weight: bold;
-   }
+#dark img {
+  border: none;
+  position: relative;
+  right: 8vw;
+  cursor: pointer;
+}
 
-   .optionsWork:hover{
+/* QUEBRA LINHA - HR (E AS OPÇÕES DE TRABALHO DA TELA INICIAL) */
+
+
+#secondHeader {
+  background-color: #373737;
+  box-shadow: 0 5px 5px  #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+  width: 100vw;
+  padding-bottom: 4px;
+  z-index: 1;
+}
+
+.optionsWork {
+  background: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  margin: 0 auto;
+  font-size: 2.6vh;
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.optionsWork:hover {
     color: rgb(87, 87, 87);
-   }
+}
+ .description{
+  height: 70vh;
+  background-color: #5b5a5a;
+  
+}
    
-   .description{
-    height: 70vh;
-    background-color: #5b5a5a;
-   }
+ #descriptionSite {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell; 
+  height: 19vh;
+  width: 20vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%,150%);
+  border-radius: 30px;
+ 
+}
+#descriptionSiteChild{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color:#ffffff; 
+  margin: 0; 
+}
+   /* BARRA DE AVALIAÇÕES DO SITE */
+#avaliationSite{
+  height: 350px;
+  width: 100vw;
+  background-color: #373737;
+}
+
+#avaliationText{
+  font-size: 4vh;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  padding-left: 7vw;
+  padding-top: 5vh;
+}
    
-   #descriptionSite{
-    text-align: center;
-    vertical-align: middle;
-    display: table-cell; 
-    height: 19vh; width: 20vw;
-    
-    top: 50%; left: 50%;
-    transform: translate(50%,150%);
-    border-radius: 30px; background: #373737;
-   }
-   #descriptionSiteChild{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px; color:#ffffff; 
-    margin: 0; 
-   }
+.avaliationContainer{
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 86%;
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  top: 2vh;
+}
 
-   #avaliationSite{
-    height: 320px;
-    
-    background-color: #373737;
-   }
+.swiper-slide{
+  border-radius: 30px;
+  background-color: #ebebeb;
+}
 
-   #avaliationText{
-    font-size: 4vh;
-    color: #e7e8ed;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    padding-left: 7vw;
-    padding-top: 4vh;
-   }
-   
-   .avaliationContainer{
+#perfilImage {
+  margin-left: 10px;
+  margin-top: 10px;
+  position: relative;
+  border-radius: 100%;
+  height: 90px;
+  width: 90px;
+}
+#userPerfil{
+  display: flex;
+  flex-wrap: wrap;
+}
+#userName{
+  margin-left: 15px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+#userProfession{
+  font-size: 17px;
+  font-weight: 400;
+}
 
-    border-radius: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    width: 86%;
-    height: 200px;
-    margin: 0 auto;
-    position: relative;
-    top: 2vh;
-   }
+.estrelas{
+  position: relative;
+  bottom: 9px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-   .swiper-slide{
-    border-radius: 30px;
-    background-color: #5b5a5a;
-   }
+.estrelas input[type=radio] {
+  display: none;
+}
+.estrelas label i.fa:before {
+  content:'\f005';
+  color: #FC0;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+  color: #CCC;
+}
 
-   footer{
-    height: 23vh;
-    width: 100%;
-    background-color: #222222;
-    border: 1px solid rgba(0, 0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-   }
+.avaliationButtonContainer{
+  width: 80%;
+  margin: 35px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+.avaliationPerfil{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  height: 40px;
+  width: 47%;
+  background-color: #646464;
+}
 
-   #footerLink{
-    text-decoration: none;
-    margin-top: 4vh;
-    margin-bottom: 3vh;
-   }
-   #footerLink a{
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 2.6vh;
-    color: #efefef;
-   }
+.avaliationButton{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  height: 40px;
+  width: 47%;
+  background-color: #424794;
+}
 
-   #footerIcon{
-    text-decoration: none;
-    font-family: Arista;
-    font-size: 6vh;
-    color: #414dff;
-   }
-   #footerIcon:visited{
-    color: #414dff;
-   }
-   #footerCopy{
-    margin-top: 1.7vh;
-    font-size: 2vh;
-    color: #efefef;
-   }
-   #dateCopy{
-    color: #efefef;
-   }
+.avaliationButton a, .avaliationPerfil a{
+  color: white;
+  text-decoration: none;
+}
+
+.avaliationButton:hover, .avaliationPerfil:hover{
+  opacity: 0.7;
+}
+/*/*/
 
 
+   /* ANUNCIO DE CADASTRO */
+#anuncioCad{
+  background-color: white;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#anuncioCadChild{
+  width: 450px;
+  height: 400px;
+  border-radius: 400px;
+  background-color: #efefef;
+}
+
+#anuncioImage{
+  position: absolute;
+  right: 50vw;
+  height: 400px;
+}
+
+#anuncioText{
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 33px;
+  position: relative;
+  color: #313131;
+  left: 120px;
+  top: 40px;
+  width: 330px;
+  display: block;
+  background-color: #efefef;
+  border-radius: 14px;
+}
+
+.anuncioButtonContainer{
+  width: 80%;
+  position: relative;
+  left: 250px;
+  top: 80px;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+  
+#anuncioButton{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 20px;
+  height: 40px;
+  width: 47%;
+  background-color: #424794;
+}
+
+#anuncioButton a{
+  color: white;
+  text-decoration: none;
+}
+
+.anuncioButton:hover{
+  opacity: 0.7;
+}
+ /*/*/
+
+
+   /* FOOTER DO SITE */
+footer{
+  height: 23vh;
+  width: 100%;
+  background-color: #e7e8ed;
+  border: 1px solid rgba(0, 0, 0, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#footerLink{
+  text-decoration: none;
+  margin-top: 4vh;
+  margin-bottom: 3vh;
+}
+#footerLink a{
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 2.6vh;
+  color: #524f4f;
+}
+
+#footerIcon{
+  text-decoration: none;
+  font-family: Arista;
+  font-size: 6vh;
+}
+#footerCopy{
+  margin-top: 1.7vh;
+  font-size: 2vh;
+}
+#dateCopy{
+  color: #524f4f;
+}
+ /*/*/
+
+
+ /* FORMULÁRIO DE CADASTRO MANIPULADO VIA JAVASCRIPT: FUNCTION CREATE FORM; FUNCTION REMOVE FORM */
+#signUpForm{
+  position: absolute;
+  border-radius: 10px;
+  height: 60vh; width: 20vw;
+  left: 50%;
+  background: #c2c2c2;
+  display: block; text-align: center; 
+}
+
+.signUpInput{
+  text-align: center;
+  height: 4vh; width: 11vw;
+  border-radius: 4px; 
+  border: none;
+  outline:none;
+  margin-top: 10px;
+}
+#removeForm {
+  position:relative;
+  right: 30px
+}
+ #signUpButton {
+  height: 5vh; 
+  width: 15vw;
+}
+
+
+#chatBar{
+  background: #313131;
+  height: 100vh;
+  width: 10vw;
+  position: fixed;
+  z-index: 2;
+}
+
+/*//// FIM DA VERSÃO DE COMPUTADOR ////*/
+
+
+
+/*//// VERSÃO PARA CELULAR ////*/
+@media (max-width:550px){
+ 
+}
+
+/*// VERSÃO PARA O CELULAR DEITADO (NA HORIZONTAL) //*/
+@media (orientation: landscape) { 
+
+}
+/*/*/
+
+/* FIM DA VERSÃO PARA CELULAR */
