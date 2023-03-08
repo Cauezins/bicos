@@ -5,237 +5,238 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bicos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" id="styleSite" href="style.css">
     <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="confi.js"></script>
+
 
 
 </head>
 <body onload="year(); slider(); contrast()">
     <!-- CABEÇALHO -->
-    <div id="initialHeader">
-        <a id="initialHeaderChild" href="#" class=notranslate>bicos</a>
-        <div id="search">
-            <input type="text" placeholder="O que você precisa?" onfocus="searchColor()" onblur="searchColorNorm()" id="searchButton">
-            <a href="" ><img id="img" src="search.svg" alt=""></a>
-        </div>    
-            
-        <input type="button" value="Logue-se"class="initialHeaderCousin" > 
-        
-        <div id="light" onclick="darkModeOp()">
-            <img id="imgD" src="moon.svg" alt="">
-        </div>
-        
-        <hr class="breakLine"> <br>
-    </div>
-    <div id="secondHeader">    
-        <a class="optionsWork" href="#">Pedreiro</a>
-        <a class="optionsWork" href="#">Marceneiro</a>
-        <a class="optionsWork" href="#">Faxineira</a>
-        <a class="optionsWork" href="#">Eletricista</a>
-        <a class="optionsWork" href="#">Pintor</a>
-    </div>
-    <!-- FINAL DO CABEÇALHO -->
-    <!-- MAIN DO SITE-->
-    <main>
-        <div class="description">
-            
-            <!-- DESCRIÇÃO DO SITE - DIREITA INFERIOR -->
 
-            <div id="descriptionSite">
-                <h1 id="descriptionSiteChild"> Profissionais autônomos e qualificados em sua <br> cidade.</h1>
+<div id="initialHeader">
+  <a id="initialHeaderChild" href="#" class=notranslate>bicos</a>
+  
+   <div id="search">
+    <input type="text" placeholder="O que você precisa?"  id="searchButton">
+    <a> <img id="img" src="search.svg" alt=""> </a>
+  </div>    
+
+  <div class="initialHeaderCousin" id="parentofloginForm">
+    <input type="button" value="Logue-se"class="initialHeaderCousin" onclick="loginandSignUp()"> 
+   </div>
+  
+  <div id="light" onclick="darkModeOp()">
+    <img id="imgD" src="moon.svg" alt="">
+  </div>
+  
+
+</div>
+
+<div id="secondHeader">    
+  <a class="optionsWork">Pedreiro</a>
+  <a class="optionsWork">Marceneiro</a>
+  <a class="optionsWork">Faxineira</a>
+  <a class="optionsWork">Eletricista</a>
+  <a class="optionsWork">Pintor</a>
+</div>
+   <!-- FINAL DO CABEÇALHO -->
+
+   <!-- MAIN DO SITE-->
+
+
+<main>
+
+    <!-- DESCRIÇÃO DO SITE - DIREITA INFERIOR -->
+  <div class="description">
+    <div id="descriptionSite">
+    <h1 id="descriptionSiteChild"> Profissionais autônomos e qualificados em sua <br> cidade.</h1>
+    </div>
+  </div>
+     <!---->
+
+
+    <!-- MELHORES AVALIADOS-->
+<div id="avaliationSite">
+     <h1 id="avaliationText">Melhores avaliados em "Quissamã"</h1>
+
+     <div class="avaliationContainer swiper mySwiper" id="">
+       <div class="swiper-wrapper">   
+         <div class="swiper-slide">
+           <!-- PERFIL DO USUÁRIO -->
+           <div id="userPerfil">
+           <img src="ronaldo.jpeg" id="perfilImage" alt="">
+             <div>
+             <h3 id="userName"> Ronaldo <span id="userProfession"> <br> Eletricista</span></h3>
+              <div class="estrelas">
+                <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                <label for="cm_star-1"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                <label for="cm_star-2"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                <label for="cm_star-3"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                <label for="cm_star-4"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                <label for="cm_star-5"><i class="fa"></i></label>
+                <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                <span>(30)</span>
+              </div>                               
+             </div>
+            <div class="avaliationButtonContainer">
+              <div class="avaliationPerfil">
+                <a href="#" >Perfil</a>
+              </div>    
+              <div class="avaliationButton">
+                <a href="#" >Contato</a>
+              </div>    
             </div>
 
-            <!-- FINAL DA DESCRIÇÃO -->
+           </div>
+         <!-- FIM DO PERFIL DO USUÁRIO -->
+         </div>
 
-        </div>
-        
-        <!-- MELHORES AVALIADOS-->
-        
-
-        <div id="avaliationSite">
-            
-            <h1 id="avaliationText">Melhores avaliados em "Quissamã"</h1>
-
-            <div class="avaliationContainer swiper mySwiper" id="">
-
-                <div class="swiper-wrapper">   
-                    <div class="swiper-slide">
-                         <!-- PERFIL DO USUÁRIO -->
-                        <div id="userPerfil">
-                            <img src="ronaldo.jpeg" id="perfilImage" alt="">
-                            <div>
-                                <h3 id="userName"> Ronaldo <span id="userProfession"> <br> Eletricista</span></h3>
-                                <div class="estrelas">
-                                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                                    <label for="cm_star-1"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                                    <label for="cm_star-2"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                                    <label for="cm_star-3"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                                    <label for="cm_star-4"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                                    <label for="cm_star-5"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                                    <span>(30)</span>
-                                </div>
-                                
-                            </div>
-                            <div class="avaliationButtonContainer">
-                                <div class="avaliationPerfil">
-                                    <a href="#" >Perfil</a>
-                                </div>    
-                                <div class="avaliationButton">
-                                    <a href="#" >Contato</a>
-                                </div>    
-                            </div>
-                            
-
-                        </div>
-                        <!-- FIM DO PERFIL DO USUÁRIO -->
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div id="userPerfil">
-                            <img src="maria.png" id="perfilImage" alt="">
-                            <div>
-                                <h3 id="userName">Maria <span id="userProfession"> <br> Babá</span></h3>
-                                <div class="estrelas">
-                                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                                    <label for="cm_star-1"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                                    <label for="cm_star-2"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                                    <label for="cm_star-3"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                                    <label for="cm_star-4"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                                    <label for="cm_star-5"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                                    <span>(30)</span>
-                                </div>
-                                
-                            </div>
-                            <div class="avaliationButtonContainer">
-                                <div class="avaliationPerfil">
-                                    <a href="#" >Perfil</a>
-                                </div>    
-                                <div class="avaliationButton">
-                                    <a href="#" >Contato</a>
-                                </div>    
-                            </div>
-                            
-
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div id="userPerfil">
-                            <img src="jorge.jpeg" id="perfilImage" alt="">
-                            <div>
-                                <h3 id="userName"> Jorge <span id="userProfession"> <br> Téc. Informática</span></h3>
-                                <div class="estrelas">
-                                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                                    <label for="cm_star-1"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                                    <label for="cm_star-2"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                                    <label for="cm_star-3"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                                    <label for="cm_star-4"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                                    <label for="cm_star-5"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                                    <span>(30)</span>
-                                </div>
-                                
-                            </div>
-                            <div class="avaliationButtonContainer">
-                                <div class="avaliationPerfil">
-                                    <a href="#" >Perfil</a>
-                                </div>    
-                                <div class="avaliationButton">
-                                    <a href="#" >Contato</a>
-                                </div>    
-                            </div>
-                            
-
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div id="userPerfil">
-                            <img src="wallace.jpeg" id="perfilImage" alt="">
-                            <div>
-                                <h3 id="userName"> Wallace <span id="userProfession"> <br> Pedreiro</span></h3>
-                                <div class="estrelas">
-                                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                                    <label for="cm_star-1"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                                    <label for="cm_star-2"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                                    <label for="cm_star-3"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                                    <label for="cm_star-4"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                                    <label for="cm_star-5"><i class="fa"></i></label>
-                                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                                    <span>(30)</span>
-                                </div>
-                                
-                            </div>
-                            <div class="avaliationButtonContainer">
-                                <div class="avaliationPerfil">
-                                    <a href="#" >Perfil</a>
-                                </div>    
-                                <div class="avaliationButton">
-                                    <a href="#" >Contato</a>
-                                </div>    
-                            </div>
-                            
-
-                        </div>
-                    </div>
-                </div> 
-                <div class="swiper-pagination"></div>
-
-            </div> 
-            
-        </div>
-        
-        <div id="anuncioCad">
-
-            <div id="anuncioCadChild">
-                <div id="anuncioText">Venha fazer parte da nossa equipe</div>
-                <div class="anuncioButtonContainer">
-                    <div id="anuncioButton" onclick="createForm()">
-                       
-                        <a>Cadastre-se</a>
-                        
-                    </div>    
+         <div class="swiper-slide">
+        <div id="userPerfil">
+            <img src="maria.png" id="perfilImage" alt="">
+                <div>
+                <h3 id="userName"> Maria <span id="userProfession"> <br> Babá</span></h3>
+                <div class="estrelas">
+                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                    <label for="cm_star-1"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                    <label for="cm_star-2"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                    <label for="cm_star-3"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                    <label for="cm_star-4"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                    <label for="cm_star-5"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                    <span>(30)</span>
+                </div>                               
                 </div>
+                <div class="avaliationButtonContainer">
+                <div class="avaliationPerfil">
+                    <a href="#" >Perfil</a>
+                </div>    
+                <div class="avaliationButton">
+                    <a href="#" >Contato</a>
+                </div>    
+                </div>
+
+                        </div>
+                    </div>
+         <div class="swiper-slide">
+        <div id="userPerfil">
+            <img src="jorge.jpeg" id="perfilImage" alt="">
+            <div>
+                <h3 id="userName"> Jorge <span id="userProfession"> <br> Téc. Informática</span></h3>
+                <div class="estrelas">
+                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                    <label for="cm_star-1"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                    <label for="cm_star-2"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                    <label for="cm_star-3"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                    <label for="cm_star-4"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                    <label for="cm_star-5"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                    <span>(30)</span>
+                </div>
+                
             </div>
-            <img src="pngwing.com.png" id="anuncioImage" alt="">
+            <div class="avaliationButtonContainer">
+                <div class="avaliationPerfil">
+                    <a href="#" >Perfil</a>
+                </div>    
+                <div class="avaliationButton">
+                    <a href="#" >Contato</a>
+                </div>    
+            </div>
+            
+
         </div>
-    </main>   
+    </div>
+
+         <div class="swiper-slide">
+        <div id="userPerfil">
+            <img src="wallace.jpeg" id="perfilImage" alt="">
+            <div>
+                <h3 id="userName"> Wallace <span id="userProfession"> <br> Pedreiro</span></h3>
+                <div class="estrelas">
+                    <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                    <label for="cm_star-1"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                    <label for="cm_star-2"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                    <label for="cm_star-3"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                    <label for="cm_star-4"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                    <label for="cm_star-5"><i class="fa"></i></label>
+                    <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                    <span>(30)</span>
+                </div>
+                
+            </div>
+
+            <div class="avaliationButtonContainer">
+              <div class="avaliationPerfil">
+               <a href="#" >Perfil</a>
+              </div>    
+              <div class="avaliationButton">
+               <a href="#" >Contato</a>
+              </div>    
+            </div>
+            
+
+        </div>
+    </div>
+        </div> 
+<div class="swiper-pagination"></div>
+
+</div> 
+
+</div>
+
+
+<div id="anuncioCad">
+
+<div id="anuncioCadChild">
+<div id="anuncioText">Venha fazer parte da nossa equipe</div>
+<div class="anuncioButtonContainer">
+    <div id="anuncioButton" onclick="createForm()">
         
-       
-    <!-- FINAL DO MAIN-->
+        <a>Cadastre-se</a>
+        
+    </div>    
+</div>
+</div>
+<img src="pngwing.com.png" id="anuncioImage" alt="">
+</div>
+</main>   
 
-    <!-- Final do site -->
-    
-    <footer>
-        <div id="footerLink">
-            <a href="">Contato</a>
-            <a href="">Suporte</a>
-            <a href="">Instagram</a>
-        </div>
-        <a href="" id="footerIcon">bicos</a>
-        <div id="footerCopy">© <strong id="dateCopy"></strong></div>
-    </footer>
 
-    <!-- Fim do final do site -->
-    <script src="swiper-bundle.min.js"></script>
+<!-- FINAL DO MAIN-->
+
+<!-- Final do site -->
+
+<footer>
+<div id="footerLink">
+<a href="">Contato</a>
+<a href="">Suporte</a>
+<a href="">Instagram</a>
+</div>
+<a href="" id="footerIcon">bicos</a>
+<div id="footerCopy">© <strong id="dateCopy"></strong></div>
+</footer>
+
+<!-- Fim do final do site -->
+<script src="swiper-bundle.min.js"></script>
+<script src="confi.js"></script>
 </body>
 </html>
