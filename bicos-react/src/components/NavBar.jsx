@@ -1,8 +1,8 @@
-import { FiSearch, FiMoon, FiSun, FiMenu, FiX } from 'react-icons/fi';
+import { FiSearch, FiMenu, FiX } from 'react-icons/fi';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const SearchResults = ({ searchTerm, filteredCategories, isDesktop }) => {
+const SearchResults = ({ searchTerm, filteredCategories, isDesktop = false }) => {
   if (!searchTerm?.trim()) return null;
 
   return (
@@ -16,8 +16,10 @@ const SearchResults = ({ searchTerm, filteredCategories, isDesktop }) => {
         filteredCategories.map((result, index) => (
           <a
             key={index}
-            className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#424794]
-                       transition-colors duration-200 cursor-pointer"
+            className="block px-4 py-2 text-gray-700 
+                     hover:bg-gray-50 
+                     hover:text-[#424794]
+                     transition-colors duration-200 cursor-pointer"
           >
             {result}
           </a>
@@ -37,12 +39,7 @@ SearchResults.propTypes = {
   isDesktop: PropTypes.bool
 };
 
-SearchResults.defaultProps = {
-  isDesktop: false
-};
-
 function NavBar({ searchTerm, setSearchTerm, filteredCategories, categories }) {
-  const [isDark, setIsDark] = useState(false);
   const [searchFocus, setSearchFocus] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -81,19 +78,12 @@ function NavBar({ searchTerm, setSearchTerm, filteredCategories, categories }) {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-5">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center">
             <button className="px-8 py-2.5 text-sm font-semibold text-[#424794] border-2 border-[#424794] 
                               rounded-full hover:bg-[#424794] hover:text-white transition-all duration-300
                               hover:shadow-md active:scale-95">
               Entrar
-            </button>
-
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="p-2.5 rounded-full hover:bg-gray-100 transition-all duration-200 active:scale-95"
-              aria-label="Toggle dark mode"
-            >
-              {isDark ? <FiSun className="w-5 h-5 text-[#424794]" /> : <FiMoon className="w-5 h-5 text-[#424794]" />}
             </button>
           </div>
 
