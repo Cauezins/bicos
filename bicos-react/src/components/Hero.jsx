@@ -1,5 +1,6 @@
 import { FiSearch, FiUserPlus } from 'react-icons/fi';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Hero({ onSearch }) {
   return (
@@ -16,14 +17,15 @@ function Hero({ onSearch }) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button 
+              <Link 
+                to="/register"
                 className="px-6 py-3 border-2 border-[#424794] text-[#424794] rounded-full 
                          text-base font-medium hover:bg-[#424794] hover:text-white
                          transition-all duration-200 flex items-center gap-2 justify-center"
               >
                 <FiUserPlus className="w-4 h-4" />
                 Seja um profissional
-              </button>
+              </Link>
             </div>
           </div>
 

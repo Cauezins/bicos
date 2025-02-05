@@ -1,6 +1,7 @@
 import { FiSearch, FiMenu, FiX } from 'react-icons/fi';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const SearchResults = ({ searchTerm, filteredCategories, isDesktop = false }) => {
   if (!searchTerm?.trim()) return null;
@@ -47,7 +48,7 @@ function NavBar({ searchTerm, setSearchTerm, filteredCategories, categories }) {
     <div className="fixed top-0 w-full z-50">
       <nav className="w-full h-16 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-full flex items-center justify-between">
-          <a href="#" className="font-['Arista'] text-[#424794] hover:text-[#2a2f86] transition-colors duration-300 text-3xl md:text-4xl">
+          <a href="/" className="font-['Arista'] text-[#424794] hover:text-[#2a2f86] transition-colors duration-300 text-3xl md:text-4xl">
             bicos
           </a>
 
@@ -80,11 +81,12 @@ function NavBar({ searchTerm, setSearchTerm, filteredCategories, categories }) {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center">
-            <button className="px-8 py-2.5 text-sm font-semibold text-[#424794] border-2 border-[#424794] 
+            <Link 
+                to="/login"  className="px-8 py-2.5 text-sm font-semibold text-[#424794] border-2 border-[#424794] 
                               rounded-full hover:bg-[#424794] hover:text-white transition-all duration-300
                               hover:shadow-md active:scale-95">
               Entrar
-            </button>
+            </Link>
           </div>
 
           <button 

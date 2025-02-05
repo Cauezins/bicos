@@ -38,11 +38,11 @@ function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-start p-4">
+      <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10">
           <div className="text-center mb-8">
-            <Link to="/" className="font-['Arista'] text-brand-primary text-5xl hover:text-brand-secondary transition-colors">
+            <Link to="/" className="font-['Arista'] text-[#424794] hover:text-[#2a2f86] transition-colors duration-300 text-5xl md:text-5xl">
               bicos
             </Link>
             <h2 className="text-2xl font-semibold text-gray-800 mt-6">Criar conta</h2>
@@ -120,12 +120,12 @@ function RegisterPage() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3.5 px-4 bg-gradient-to-r from-brand-primary to-brand-secondary
-                         text-white rounded-xl font-medium text-sm
-                         hover:shadow-lg hover:shadow-brand-primary/20 
-                         active:scale-[0.98] transition-all duration-200
-                         disabled:opacity-70 disabled:cursor-not-allowed
-                         flex items-center justify-center"
+                className={`w-full py-2 px-4 font-semibold text-[#424794] border-2 border-[#424794] 
+                    rounded-xl hover:bg-[#424794] hover:text-white transition-all duration-300
+                    hover:shadow-md active:scale-95
+                    disabled:opacity-70 disabled:cursor-not-allowed
+                    flex items-center justify-center
+                    ${isLoading ? 'bg-[#424794]' : ''}`}
               >
                 {isLoading ? (
                   <span className="inline-block w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
